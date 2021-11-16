@@ -10,8 +10,8 @@
 
 - name: Create database container
   docker_container:
-    name: "{{application_name}}"
-    image: "{{application_name}}:latest"
+    name: "{{ application_name }}"
+    image: "{{ application_name }}:latest"
     restart_policy: "always"
     memory: "100MB"
     exposed_ports:
@@ -20,9 +20,9 @@
       - name: "pomerium"
     log_driver: "awslogs"
     log_options:
-        awslogs-region: "{{cloudwatch_region}}"
-        awslogs-group: "{{cloudwatch_log_group}}"
-        awslogs-stream: "postgres-database"
+      awslogs-region: "{{ cloudwatch_region }}"
+      awslogs-group: "{{ cloudwatch_log_group }}"
+      awslogs-stream: "postgres-database"
     env:
-      POSTGRES_USER: "{{postgres_username}}"
-      POSTGRES_PASSWORD: "{{postgres_password}}"
+      POSTGRES_USER: "{{ postgres_username }}"
+      POSTGRES_PASSWORD: "{{ postgres_password }}"
