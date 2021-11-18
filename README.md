@@ -11,7 +11,7 @@ collections:
   - community.docker
 
 roles:
-  - src: https://github.com/namelivia/namelivia.postgres
+  - src: https://github.com/namelivia/ansible-postgres
 ```
 
 ## Required variables
