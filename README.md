@@ -1,4 +1,4 @@
-# Postgres Ansible role
+# Postgres Ansible role [![Ansible Lint](https://github.com/namelivia/ansible-postgres/actions/workflows/ansible-lint.yml/badge.svg)](https://github.com/namelivia/ansible-postgres/actions/workflows/ansible-lint.yml)
 
 ## This is a WIP
 
