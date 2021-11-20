@@ -2,7 +2,7 @@
 - name: 'Check mandatory variables are defined'
   assert:
     that:
-      - database_corntainer_name is defined
+      - database_container_name is defined
       - database_user is defined
       - database_password is defined
       - database_name is defined
