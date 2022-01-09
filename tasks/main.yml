@@ -6,7 +6,7 @@
       - cloudwatch_region is defined
       - cloudwatch_log_group is defined
       - postgres_username is defined
-       - postgres_password is defined
+      - postgres_password is defined
 
 - name: Create database container
   docker_container:
