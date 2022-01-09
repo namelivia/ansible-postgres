@@ -9,16 +9,17 @@
 
 - name: Create the script
   template:
-    src: ../templates/create_database_if_not_exists.j2
+    src: create_database_if_not_exists.j2
     dest: "/tmp/create_database_if_not_exists.sh"
     owner: root
     group: root
     mode: '755'
 
 - name: Execute script
-  shell:
-    cmd: /tmp/create_database_if_not_exists.sh
+  command: /tmp/create_database_if_not_exists.sh
+  changed_when: false
 
 - name: Remove script
-  shell:
-    cmd: rm /tmp/create_database_if_not_exists.sh
+  file:
+    path: /tmp/create_database_if_not_exists.sh
+    state: absent
