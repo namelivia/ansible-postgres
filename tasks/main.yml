@@ -18,7 +18,7 @@
     exposed_ports:
       - "5432"
     networks:
-      - name: "pomerium"
+      - name: "{{ network_name }}"
     log_driver: "awslogs"
     log_options:
       awslogs-region: "{{ cloudwatch_region }}"
