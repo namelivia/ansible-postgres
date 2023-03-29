@@ -14,7 +14,6 @@
     image: "{{ application_name }}:latest"
     restart_policy: "always"
     cleanup: true
-    memory: "100MB"
     exposed_ports:
       - "5432"
     networks:
