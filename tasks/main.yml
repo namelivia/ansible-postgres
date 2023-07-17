@@ -3,8 +3,7 @@
 - name: 'Check mandatory variables are defined'
   assert:
     that:
-      - cloudwatch_region is defined
-      - cloudwatch_log_group is defined
+      - loki_url is defined
       - postgres_username is defined
       - postgres_password is defined
 
@@ -18,11 +17,10 @@
       - "5432"
     networks:
       - name: "{{ network_name }}"
-    log_driver: "awslogs"
+    log_driver: "loki"
     log_options:
-      awslogs-region: "{{ cloudwatch_region }}"
-      awslogs-group: "{{ cloudwatch_log_group }}"
-      awslogs-stream: "postgres-database"
+      loki-url: "{{ loki_url }}"
+      loki-batch-size: "400"
     env:
       POSTGRES_USER: "{{ postgres_username }}"
       POSTGRES_PASSWORD: "{{ postgres_password }}"
