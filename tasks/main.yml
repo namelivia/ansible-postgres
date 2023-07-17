@@ -7,6 +7,10 @@
       - postgres_username is defined
       - postgres_password is defined
 
+- name: Create the postgres data volumne
+  docker_volume:
+    name: postgres-data
+
 - name: Create database container
   docker_container:
     name: "postgres-database"
@@ -21,6 +25,8 @@
     log_options:
       loki-url: "{{ loki_url }}"
       loki-batch-size: "400"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
     env:
       POSTGRES_USER: "{{ postgres_username }}"
       POSTGRES_PASSWORD: "{{ postgres_password }}"
