@@ -6,6 +6,7 @@
       - database_user is defined
       - database_password is defined
       - database_name is defined
+      - postgres_root_user is defined
 
 - name: Create the script
   template:
