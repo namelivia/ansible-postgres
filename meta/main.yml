@@ -1,5 +1,6 @@
 galaxy_info:
   role_name: postgres
+  namespace: namelivia
   author: José Ignacio Amelivia Santiago <jignacio.amelivia@gmail.com>
   description: Ansible role I deploy a postgres database
   license: GPLv2
